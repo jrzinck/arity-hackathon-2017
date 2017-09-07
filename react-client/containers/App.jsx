@@ -26,7 +26,7 @@ const inline = {
 class App extends Component {
 
     componentDidMount() {
-        let myLatlng = new google.maps.LatLng(41.881934, -87.650052);
+        let myLatlng = new google.maps.LatLng(41.880784, -87.674153);
         let myOptions = {
             zoom: 14,
             center: myLatlng,
@@ -43,8 +43,7 @@ class App extends Component {
             streetViewControl: true,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
-        setTimeout(() => this.setUpRoutes(), 3000);
-        this.setState({globalGoogleMap: new google.maps.Map(document.getElementById('googleMap'), myOptions)});
+        this.setState({globalGoogleMap: new google.maps.Map(document.getElementById('googleMap'), myOptions)}, this.setUpRoutes);
     }
 
     handleSave(text) {
@@ -54,6 +53,8 @@ class App extends Component {
     }
 
     setUpRoutes() {
+        //region United Center
+        //north
         let trip = {
             sourceLng: -87.67664909362793,
             sourceLat: 41.88133612075702,
@@ -64,6 +65,43 @@ class App extends Component {
         this.getPathColor(trip).then(pathColor => {
             this.drawTrip(pathColor, trip);
         });
+
+        //east
+        trip = {
+            sourceLng: -87.67177820205688,
+            sourceLat: 41.88140002416609,
+            destinationLng: -87.67169237136841,
+            destinationLat: 41.878763955489404
+        };
+
+        this.getPathColor(trip).then(pathColor => {
+            this.drawTrip(pathColor, trip);
+        });
+
+        //south
+        trip = {
+            sourceLng: -87.67169237136841,
+            sourceLat: 41.878827861470725,
+            destinationLng: -87.67664909362793,
+            destinationLat: 41.878747978984066
+        };
+
+        this.getPathColor(trip).then(pathColor => {
+            this.drawTrip(pathColor, trip);
+        });
+
+        //west
+        trip = {
+            sourceLng: -87.67662763595581,
+            sourceLat: 41.878747978984066,
+            destinationLng: -87.67662763595581,
+            destinationLat: 41.881352096615274
+        };
+
+        this.getPathColor(trip).then(pathColor => {
+            this.drawTrip(pathColor, trip);
+        });
+        //endregion
     }
 
     drawTrip(pathColor, trip) {
@@ -97,9 +135,7 @@ class App extends Component {
                 totalRiskScore += parseFloat(e.riskScore);
             });
 
-            console.log(totalRiskScore);
-
-            return "#FF0000";
+            return riskColors.getColorForRiskScore(totalRiskScore / totalElements);
         });
     }
 
