@@ -135,7 +135,9 @@ class App extends Component {
                 totalRiskScore += parseFloat(e.riskScore);
             });
 
-            return riskColors.getColorForRiskScore(totalRiskScore / totalElements);
+            let averageScore = totalRiskScore / totalElements;
+            console.log("Average Score", averageScore);
+            return riskColors.getColorForRiskScore(averageScore);
         });
     }
 
