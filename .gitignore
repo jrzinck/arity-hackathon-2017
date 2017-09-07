@@ -4,6 +4,7 @@ coverage/
 node_modules/
 /.idea/
 .idea/
+*/.idea/workspace.xml
 
 .eslintcache
 npm-debug.log.*
