@@ -3,7 +3,7 @@ import TextField from 'material-ui/TextField'
 
 const defaultStyle = {
     marginLeft: 30,
-    paddingTop: 25
+    paddingTop: 30
 };
 
 class TextInput extends Component {

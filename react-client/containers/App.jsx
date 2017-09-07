@@ -5,13 +5,26 @@ import Header from '../components/Header';
 import MainSection from '../components/MainSection';
 import * as TodoActions from '../actions/todos';
 import * as apiCalls from '../middleware/api-client';
+import Button from 'material-ui/RaisedButton'
+
 import * as riskColors from '../constants/riskColors';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import theme from '../src/material_ui_raw_theme_file'
 import TextInput from "../components/TextInput";
 
+const buttonStyle = {
+    marginLeft: 30,
+    marginTop: 30,
+    marginBottom: 40
+};
+
+const inline = {
+    display: "inline-block"
+};
+
 class App extends Component {
+
     componentDidMount() {
         let myLatlng = new google.maps.LatLng(41.881934, -87.650052);
         let myOptions = {
@@ -100,9 +113,12 @@ class App extends Component {
                         <MainSection todos={todos} actions={actions}/>
                         <div id="googleMap"
                              style={{marginLeft: "30px", width: "50%", height: "600px", border: "2px solid #122846"}}/>
-                        <TextInput
-                            onSave={this.handleSave.bind(this)}
-                            placeholder="Please enter and address..."/>
+                        <div style={{inline}}>
+                            <TextInput
+                                onSave={this.handleSave.bind(this)}
+                                placeholder="Please enter an address..."/>
+                            <Button label="Update" primary={true} style={buttonStyle}/>
+                        </div>
                     </div>
                 </MuiThemeProvider>
             </div>
