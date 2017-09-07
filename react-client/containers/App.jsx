@@ -102,6 +102,106 @@ class App extends Component {
             this.drawTrip(pathColor, tripWestUnitedCenter);
         });
         //endregion
+
+        //region Wrigley Field
+        //north
+        let tripNorthWrigleyField = {
+            sourceLng: -87.6544189453125,
+            sourceLat: 41.94904584118921,
+            destinationLng: -87.65795946121216,
+            destinationLat: 41.948982005475216
+        };
+
+        this.getPathColor(tripNorthWrigleyField).then(pathColor => {
+            this.drawTrip(pathColor, tripNorthWrigleyField);
+        });
+
+        //east
+        let tripEastWrigleyField = {
+            sourceLng: -87.65440821647644,
+            sourceLat: 41.94905382064896,
+            destinationLng: -87.65435457229614,
+            destinationLat: 41.947210538912316
+        };
+
+        this.getPathColor(tripEastWrigleyField).then(pathColor => {
+            this.drawTrip(pathColor, tripEastWrigleyField);
+        });
+
+        //south
+        let tripSouthWrigleyField = {
+            sourceLng: -87.65435457229614,
+            sourceLat: 41.94723447797777,
+            destinationLng: -87.65651106834412,
+            destinationLat: 41.947194579530354
+        };
+
+        this.getPathColor(tripSouthWrigleyField).then(pathColor => {
+            this.drawTrip(pathColor, tripSouthWrigleyField);
+        });
+
+        //west
+        let tripWestWrigleyField = {
+            sourceLng: -87.65647888183594,
+            sourceLat: 41.947194579530354,
+            destinationLng: -87.6579487323761,
+            destinationLat: 41.94897402600648
+        };
+
+        this.getPathColor(tripWestWrigleyField).then(pathColor => {
+            this.drawTrip(pathColor, tripWestWrigleyField);
+        });
+        //endregion
+
+        //region LaSalle Street
+
+        let lasalle = {
+            sourceLng: -87.63261795043945,
+            sourceLat: 41.88781200691925,
+            destinationLng: -87.63321876525879,
+            destinationLat: 41.911194015189594
+        };
+
+        this.getPathColor(lasalle).then(pathColor => {
+            this.drawTrip(pathColor, lasalle);
+        });
+        //endregion
+
+        //region Lake Shore
+
+        let lakeshoreLower = {
+            sourceLng: -87.61716842651367,
+            sourceLat: 41.869918351732906,
+            destinationLng: -87.61734008789062,
+            destinationLat: 41.88199711855609
+        };
+
+        this.getPathColor(lakeshoreLower).then(pathColor => {
+            this.drawTrip(pathColor, lakeshoreLower);
+        });
+
+        let lakesoreMiddle = {
+            sourceLng: -87.61407852172852,
+            sourceLat: 41.88416977613571,
+            destinationLng: -87.61416435241699,
+            destinationLat: 41.89311523481589
+        };
+
+        this.getPathColor(lakesoreMiddle).then(pathColor => {
+            this.drawTrip(pathColor, lakesoreMiddle);
+        });
+
+        let lakeshoreUpper = {
+            sourceLng: -87.61416435241699,
+            sourceLat: 41.89298745136862,
+            destinationLng: -87.61982917785645,
+            destinationLat: 41.90097342550564
+        };
+
+        this.getPathColor(lakeshoreUpper).then(pathColor => {
+            this.drawTrip(pathColor, lakeshoreUpper);
+        });
+        //endregion
     }
 
     drawTrip(pathColor, trip) {
