@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import MainSection from '../components/MainSection';
 import * as TodoActions from '../actions/todos';
 import * as apiCalls from '../middleware/api-client';
+import * as riskColors from '../constants/riskColors';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import theme from '../src/material_ui_raw_theme_file'
@@ -73,20 +74,19 @@ class App extends Component {
                 window.alert('Directions request failed due to ' + status);
             }
         });
-
-
-        }
+    }
 
     getPathColor(trip) {
-        return apiCalls.getRiskInfo(trip).then(result => {    let totalRiskScore = 0;
-        let totalElements = result.data.riskInfoItem.length;
+        return apiCalls.getRiskInfo(trip).then(result => {
+            let totalRiskScore = 0;
+            let totalElements = result.data.riskInfoItem.length;
             result.data.riskInfoItem.forEach(e => {
-            totalRiskScore += parseFloat(e.riskScore);
-                });
+                totalRiskScore += parseFloat(e.riskScore);
+            });
 
             console.log(totalRiskScore);
 
-        return "#FF0000";
+            return "#FF0000";
         });
     }
 
@@ -98,7 +98,8 @@ class App extends Component {
                     <div>
                         <Header addTodo={actions.addTodo}/>
                         <MainSection todos={todos} actions={actions}/>
-                        <div id="googleMap" style={{marginLeft: "30px", width: "50%", height: "600px", border: "2px solid #122846"}}/>
+                        <div id="googleMap"
+                             style={{marginLeft: "30px", width: "50%", height: "600px", border: "2px solid #122846"}}/>
                         <TextInput
                             onSave={this.handleSave.bind(this)}
                             placeholder="Please enter and address..."/>
