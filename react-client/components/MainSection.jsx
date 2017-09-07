@@ -12,11 +12,7 @@ class MainSection extends Component {
 
   render() {
     return (
-      <section className="main" style={defaultStyle}>
-        <div>
-          Test Text
-        </div>
-      </section>
+      <section className="main" style={defaultStyle}/>
     );
   }
 }

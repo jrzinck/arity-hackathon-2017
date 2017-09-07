@@ -2,7 +2,8 @@ import React, {Component, PropTypes} from 'react';
 import TextField from 'material-ui/TextField'
 
 const defaultStyle = {
-    marginLeft: 20
+    marginLeft: 30,
+    paddingTop: 25
 };
 
 class TextInput extends Component {
