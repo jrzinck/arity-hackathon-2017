@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c8748579-a611-4f50-9920-407fc83ea798" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="c8748579-a611-4f50-9920-407fc83ea798" name="Default" comment="" />
     <ignored path="node_modules/.bin/acorn" />
     <ignored path="node_modules/.bin/ansi-html" />
     <ignored path="node_modules/.bin/errno" />
@@ -7299,7 +7297,7 @@
       <option name="presentableId" value="Default" />
       <updated>1504807358723</updated>
       <workItem from="1504807363137" duration="2667000" />
-      <workItem from="1504810426050" duration="482000" />
+      <workItem from="1504810426050" duration="514000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit for react w/ webpack">
       <created>1504807959489</created>
@@ -7392,11 +7390,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504810901924</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="merged npm and webpacks together">
+      <created>1504810931522</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1504810931522</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3149000" />
+    <option name="totallyTimeSpent" value="3181000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1436" height="877" extended-state="6" />
