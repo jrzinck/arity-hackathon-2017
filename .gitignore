@@ -1,0 +1,8 @@
+dist/
+coverage/
+node_modules/
+
+.eslintcache
+npm-debug.log.*
+/automation/reports/
+/dist/
