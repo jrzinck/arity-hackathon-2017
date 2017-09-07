@@ -1,25 +1,28 @@
+import * as Colors from 'material-ui/styles/colors';
+
+
 export const riskColors = {
-    0: "#123456",
-    0.1: "#123456",
-    0.2: "#123456",
-    0.3: "#123456",
-    0.4: "#123456",
-    0.5: "#123456",
-    0.6: "#123456",
-    0.7: "#123456",
-    0.8: "#123456",
-    0.9: "#123456",
-    1: "#123456",
-    1.1: "#123456",
-    1.2: "#123456",
-    1.3: "#123456",
-    1.4: "#123456",
-    1.5: "#123456",
-    1.6: "#123456",
-    1.7: "#123456",
-    1.8: "#123456",
-    1.9: "#123456",
-    2: "#123456"
+    0: Colors.lightGreenA400,
+    0.1: Colors.greenA400,
+    0.2: Colors.greenA400,
+    0.3: Colors.greenA400,
+    0.4: Colors.greenA400,
+    0.5: Colors.greenA400,
+    0.6: Colors.greenA400,
+    0.7: Colors.greenA400,
+    0.8: Colors.greenA400,
+    0.9: Colors.greenA400,
+    1: Colors.greenA200,
+    1.1: Colors.lightBlue600,
+    1.2: Colors.lightBlue400,
+    1.3: Colors.lightBlue200,
+    1.4: Colors.amber400,
+    1.5: Colors.amber600,
+    1.6: Colors.amber800,
+    1.7: Colors.red300,
+    1.8: Colors.red500,
+    1.9: Colors.red700,
+    2: Colors.red900
 };
 
 export function getColorForRiskScore(riskScore) {
