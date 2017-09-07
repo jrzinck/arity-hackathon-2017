@@ -2,6 +2,7 @@ dist/
 **/.idea/
 coverage/
 node_modules/
+.idea/
 
 .eslintcache
 npm-debug.log.*
