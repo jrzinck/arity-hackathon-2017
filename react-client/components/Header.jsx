@@ -12,7 +12,7 @@ class Header extends Component {
         return (
             <header className="header">
                 <AppBar title="TraffiCop"/>
-                <h1 style={defaultStyle}>Traffic Near United Center</h1>
+                <h1 style={defaultStyle}>Chicago Traffic</h1>
             </header>
         );
     }

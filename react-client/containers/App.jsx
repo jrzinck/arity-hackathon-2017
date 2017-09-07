@@ -26,9 +26,9 @@ const inline = {
 class App extends Component {
 
     componentDidMount() {
-        let myLatlng = new google.maps.LatLng(41.880784, -87.674153);
+        let myLatlng = new google.maps.LatLng(41.911944, -87.631298);
         let myOptions = {
-            zoom: 14,
+            zoom: 13,
             center: myLatlng,
             disableDefaultUI: true,
             panControl: true,
