@@ -55,51 +55,51 @@ class App extends Component {
     setUpRoutes() {
         //region United Center
         //north
-        let trip = {
+        let tripNorthUnitedCenter = {
             sourceLng: -87.67664909362793,
             sourceLat: 41.88133612075702,
             destinationLng: -87.67175674438477,
             destinationLat: 41.88138404831982
         };
 
-        this.getPathColor(trip).then(pathColor => {
-            this.drawTrip(pathColor, trip);
+        this.getPathColor(tripNorthUnitedCenter).then(pathColor => {
+            this.drawTrip(pathColor, tripNorthUnitedCenter);
         });
 
         //east
-        trip = {
+        let tripEastUnitedCenter = {
             sourceLng: -87.67177820205688,
             sourceLat: 41.88140002416609,
             destinationLng: -87.67169237136841,
             destinationLat: 41.878763955489404
         };
 
-        this.getPathColor(trip).then(pathColor => {
-            this.drawTrip(pathColor, trip);
+        this.getPathColor(tripEastUnitedCenter).then(pathColor => {
+            this.drawTrip(pathColor, tripEastUnitedCenter);
         });
 
         //south
-        trip = {
+        let tripSouthUnitedCenter = {
             sourceLng: -87.67169237136841,
             sourceLat: 41.878827861470725,
             destinationLng: -87.67664909362793,
             destinationLat: 41.878747978984066
         };
 
-        this.getPathColor(trip).then(pathColor => {
-            this.drawTrip(pathColor, trip);
+        this.getPathColor(tripSouthUnitedCenter).then(pathColor => {
+            this.drawTrip(pathColor, tripSouthUnitedCenter);
         });
 
         //west
-        trip = {
+        let tripWestUnitedCenter = {
             sourceLng: -87.67662763595581,
             sourceLat: 41.878747978984066,
             destinationLng: -87.67662763595581,
             destinationLat: 41.881352096615274
         };
 
-        this.getPathColor(trip).then(pathColor => {
-            this.drawTrip(pathColor, trip);
+        this.getPathColor(tripWestUnitedCenter).then(pathColor => {
+            this.drawTrip(pathColor, tripWestUnitedCenter);
         });
         //endregion
     }
