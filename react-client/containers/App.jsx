@@ -52,7 +52,7 @@ class App extends Component {
         }
     }
 
-    setUpRoutes() {
+    setUpRoutes = () => {
         //region United Center
         //north
         let tripNorthUnitedCenter = {
@@ -202,7 +202,7 @@ class App extends Component {
             this.drawTrip(pathColor, lakeshoreUpper);
         });
         //endregion
-    }
+    };
 
     drawTrip(pathColor, trip) {
         let directionsService = new google.maps.DirectionsService();
@@ -259,7 +259,7 @@ class App extends Component {
                             <TextInput
                                 onSave={this.handleSave.bind(this)}
                                 placeholder="Please enter an address..."/>
-                            <Button label="Update" primary={true} style={buttonStyle}/>
+                            <Button label="Update" primary={true} style={buttonStyle} onClick={this.setUpRoutes}/>
                         </div>
                     </div>
                 </MuiThemeProvider>
