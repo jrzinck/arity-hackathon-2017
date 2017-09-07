@@ -12,9 +12,9 @@ import theme from '../src/material_ui_raw_theme_file'
 
 class App extends Component {
     componentDidMount() {
-        let myLatlng = new google.maps.LatLng(41.94, -87.65);
+        let myLatlng = new google.maps.LatLng(41.881934, -87.650052);
         let myOptions = {
-            zoom: 15,
+            zoom: 14,
             center: myLatlng,
             disableDefaultUI: true,
             panControl: true,
