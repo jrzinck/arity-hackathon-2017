@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import TodoTextInput from './TodoTextInput';
+import TodoTextInput from './TextInput';
 import { ListItem, IconButton, IconMenu, MenuItem } from 'material-ui';
 import { grey400 } from 'material-ui/styles/colors'
 

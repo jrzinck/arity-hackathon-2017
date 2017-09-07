@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react';
-import TodoTextInput from './TodoTextInput';
+import TextInput from './TextInput';
 
 import AppBar from 'material-ui/AppBar';
 
@@ -18,8 +18,8 @@ class Header extends Component {
     return (
       <header className="header">
           <AppBar title="React + Redux + Material UI Boilerplate" />
-          <h1 style={defaultStyle} >todos</h1>
-          <TodoTextInput newTodo
+          <h1 style={defaultStyle} >Traffic Near United Center</h1>
+          <TextInput newTodo
                          onSave={this.handleSave.bind(this)}
                          placeholder="What needs to be done?" />
       </header>
@@ -28,7 +28,7 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  addTodo: PropTypes.func.isRequired
+  addTodo: PropTypes.func
 };
 
 export default Header;
