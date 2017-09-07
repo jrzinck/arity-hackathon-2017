@@ -19,7 +19,7 @@ export const riskColors = {
     1.7: "#123456",
     1.8: "#123456",
     1.9: "#123456",
-    2: "#123456",
+    2: "#123456"
 };
 
 export function getColorForRiskScore(riskScore) {
