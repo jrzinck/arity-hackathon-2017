@@ -45,6 +45,7 @@
     "webpack-hot-middleware": "^2.12.2"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "classnames": "^2.2.5",
     "fbjs": "^0.8.5",
     "material-ui": "^0.16.0",
