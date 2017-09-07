@@ -4,9 +4,8 @@ import {connect} from 'react-redux';
 import Header from '../components/Header';
 import MainSection from '../components/MainSection';
 import * as TodoActions from '../actions/todos';
+import * as apiCalls from '../middleware/api-client';
 
-// For Customization Options, edit  or use
-// './src/material_ui_raw_theme_file.jsx' as a template.
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import theme from '../src/material_ui_raw_theme_file'
 import TextInput from "../components/TextInput";
@@ -41,67 +40,53 @@ class App extends Component {
     }
 
     setUpRoutes() {
-        let directionsService1 = new google.maps.DirectionsService();
-        let directionsDisplay1 = new google.maps.DirectionsRenderer({
+        let trip = {
+            sourceLng: -87.67664909362793,
+            sourceLat: 41.88133612075702,
+            destinationLng: -87.67175674438477,
+            destinationLat: 41.88138404831982
+        };
+
+        this.getPathColor(trip).then(pathColor => {
+            this.drawTrip(pathColor, trip);
+        });
+    }
+
+    drawTrip(pathColor, trip) {
+        let directionsService = new google.maps.DirectionsService();
+        let directionsDisplay = new google.maps.DirectionsRenderer({
             map: this.state.globalGoogleMap,
             polylineOptions: {
-                strokeColor: "#FF0000"
+                strokeColor: pathColor
             },
             preserveViewport: true,
             suppressMarkers: true
         });
-        directionsService1.route({
-            origin: new google.maps.LatLng(41.947945, -87.654429),
-            destination: new google.maps.LatLng(41.947278, -87.652952),
+        directionsService.route({
+            origin: new google.maps.LatLng(trip.sourceLat, trip.sourceLng),
+            destination: new google.maps.LatLng(trip.destinationLat, trip.destinationLng),
             travelMode: google.maps.TravelMode.DRIVING
         }, function (response, status) {
             if (status === google.maps.DirectionsStatus.OK) {
-                directionsDisplay1.setDirections(response);
+                directionsDisplay.setDirections(response);
             } else {
                 window.alert('Directions request failed due to ' + status);
             }
         });
 
-        let directionsService2 = new google.maps.DirectionsService();
-        let directionsDisplay2 = new google.maps.DirectionsRenderer({
-            map: this.state.globalGoogleMap,
-            polylineOptions: {
-                strokeColor: "#0000FF"
-            },
-            preserveViewport: true,
-            suppressMarkers: true
-        });
-        directionsService2.route({
-            origin: new google.maps.LatLng(41.941676, -87.661470),
-            destination: new google.maps.LatLng(41.940750, -87.660011),
-            travelMode: google.maps.TravelMode.DRIVING
-        }, function (response, status) {
-            if (status === google.maps.DirectionsStatus.OK) {
-                directionsDisplay2.setDirections(response);
-            } else {
-                window.alert('Directions request failed due to ' + status);
-            }
-        });
 
-        let directionsService3 = new google.maps.DirectionsService();
-        let directionsDisplay3 = new google.maps.DirectionsRenderer({
-            map: this.state.globalGoogleMap,
-            polylineOptions: {
-                strokeColor: "#00FF00"
-            },
-            preserveViewport: true,
-            suppressMarkers: true
-        });
-        directionsService3.route({
-            origin: new google.maps.LatLng(41.941676, -87.661470),
-            destination: new google.maps.LatLng(41.941732, -87.654270),
-            travelMode: google.maps.TravelMode.DRIVING
-        }, function (response, status) {
-            if (status === google.maps.DirectionsStatus.OK) {
-                directionsDisplay3.setDirections(response);
-            } else {
-                window.alert('Directions request failed due to ' + status);
-            }
+        }
+
+    getPathColor(trip) {
+        return apiCalls.getRiskInfo(trip).then(result => {    let totalRiskScore = 0;
+        let totalElements = result.data.riskInfoItem.length;
+            result.data.riskInfoItem.forEach(e => {
+            totalRiskScore += parseFloat(e.riskScore);
+                });
+
+            console.log(totalRiskScore);
+
+        return "#FF0000";
         });
     }
 
