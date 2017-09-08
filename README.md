@@ -13,4 +13,10 @@ To Run:
 4. run `npm run start`
 5. look for the application running on localhost:8080
 
+
+### Future Implementation
+* Take user input
+* Build dictionary of uploaded locations
+
+
 Thanks!
